@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class StartButtonController : MonoBehaviour
+public class GameOverButton : MonoBehaviour
 {
-    public void StartButton()
+    public void REStart()
     {
-     //   SceneManager.LoadScene("");
+        SceneManager.LoadScene("SampleScene");
     }
     // Start is called before the first frame update
     void Start()
