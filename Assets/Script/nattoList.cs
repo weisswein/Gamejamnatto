@@ -12,4 +12,7 @@ public class nattoList : MonoBehaviour
     //トッピングの種類
     public enum Topping { Negi, Nori, Cheese };
 
+    //混ぜられた度合い
+    public enum Maze { Mazenasi,Tyoimaze,Yokumaze};
+
 }
