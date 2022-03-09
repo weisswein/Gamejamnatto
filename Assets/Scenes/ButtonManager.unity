@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e6f9d162f3e8c439a733b258fe5857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  likenatto: 0
   liketopping: 00000000
   mixcount: 0
 --- !u!114 &1797823999
@@ -484,6 +485,11 @@ PrefabInstance:
       propertyPath: natto
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9086657614855464980, guid: 22326ffcdb0e8854e8068bb3eff28ede,
+        type: 3}
+      propertyPath: customer
+      value: 
+      objectReference: {fileID: 1797823998}
     - target: {fileID: 9086657614855464982, guid: 22326ffcdb0e8854e8068bb3eff28ede,
         type: 3}
       propertyPath: m_Name
