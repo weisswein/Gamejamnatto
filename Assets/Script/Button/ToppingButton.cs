@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToppingButton : MonoBehaviour
+public class ToppingButton : nattoList
 {
-    //トッピングの種類
-    public enum Topping { Negi, Nori, Cheese };
-
     //このスクリプトが付いているオブジェクトのトッピングの名前
     public Topping topping;
 

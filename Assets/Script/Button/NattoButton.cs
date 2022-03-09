@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NattoButton : MonoBehaviour
+public class NattoButton : nattoList
 {
-
-    //納豆の種類
-    public enum Natto { Kotubu, Ootubu, Hikiwari };
 
     //このスクリプトが付いているオブジェクトの納豆の種類
     public Natto natto;
