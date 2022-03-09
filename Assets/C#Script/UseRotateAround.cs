@@ -77,9 +77,12 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
           }
 
         //画面外に混ぜる箸が行ってしまったら、ゲームオーバー
-        if (Distance.magnitude >= 20) ;    
+        if (Distance.magnitude >= 20) DoNothing();    //今のところ何もしない応急処置
+   
+        //if文の後に何も入れないと警告がでるので、とりあえず何もしない関数を作りました
     }
-        
+
+    private void DoNothing() { }
     private void Update()
     {
 
