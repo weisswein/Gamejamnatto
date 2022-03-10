@@ -17,41 +17,22 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
    
      public int Cou = 0;
     float total = 0;
+    
 
-
-    void Start()
+   void Start()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+
     }
 
 
-    /*  Vector3 mazeru(Vector3 a, Vector3 b) 
-      { // 混ぜるときの位置制限→円の式　a^2 + b^2 = 25
-         c = Math.Pow(a,2);
-         b = Math.Pow(b,2);
-         c + d == 25 ;
-      } */
-
-    // 中心点
-    //  [SerializeField] private Vector3 _center = Vector3.zero;
-
-    // 回転軸
-    //[SerializeField] private Vector3 _axis = Vector3.up;
-
-    // 円運動周期
-    // [SerializeField] private float _period = 2;
-   // [SerializeField]
-    //private Image imgBase;
-
-  
-
    void OnMouseDrag()
     {
-       
+
         //Spriteの位置をワールド座標からスクリーン座標に変換して、objectPointに格納
         Vector3 objectPoint
             = Camera.main.WorldToScreenPoint(transform.position);
-        //spriteの回転軸となる点
+      
+        //spriteの基準となる点
         Vector3 AxisPoint
             = Vector3.zero;
         
@@ -60,19 +41,25 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
             = new Vector3(Input.mousePosition.x,
                           Input.mousePosition.y,
                            objectPoint.z);
-        
        
+      
 
         //spriteの現在位置を、スクリーン座標からワールド座標に変換して、pointWorldに格納
         Vector3 pointWorld = Camera.main.ScreenToWorldPoint(pointScreen);
          pointWorld.z = AxisPoint.z;
 
+
+       //動かせる位置を制限
+        pointWorld.x = Mathf.Clamp(Camera.main.ScreenToWorldPoint(pointScreen).x, -3, 3);
+        pointWorld.y = Mathf.Clamp(Camera.main.ScreenToWorldPoint(pointScreen).y, 0, 4);
+
              //spriteの位置を、pointWorldにする
              transform.position = pointWorld;
-
+        
+        
         //spriteの最初の位置からの距離
         Vector3 Distance = AxisPoint - transform.position;
-        //Debug.Log(Distance.magnitude);//表示
+       
         float length = Mathf.Clamp(Distance.magnitude, 0, 5);
         
             total += length;
@@ -80,26 +67,22 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
          if (total >= 500)
           {
              Cou += 1;    //混ぜる回数をカウント
-             
+            Debug.Log(Cou);
             total = 0;//合計の値を0に戻す
           }
 
-
-      
-
-        //画面外に混ぜる箸が行ってしまったら、ゲームオーバー
-       // if (Distance.magnitude >= 10) SceneManager.LoadScene("GameOverScene") ; 
+        
+       
     }
 
+   
     private void Update()
     {
+        if (Input.GetMouseButton(0))
+        {
+            Cursor.visible = false;
+        }
+        else { Cursor.visible = true; }
 
-      
-        // 中心点centerの周りを、軸axisで、period周期で円運動
-      /*  transform.RotateAround(
-            _center,
-            _axis,
-            360 / _period * Time.deltaTime
-        );*/
     }
 }
