@@ -16,6 +16,10 @@ public class GameManager : nattoList
     //ポイントを溜めていく変数
     [SerializeField] private int score = 0;
 
+    //操作画面を入れる
+    //(0:納豆選択画面,1:納豆かき混ぜ画面,2:トッピング選択画面)
+    public GameObject[] scenePanel;
+
     //現状の画面がどの画面なのかを判断する変数
 
     private GameManager gamemanager;
@@ -33,21 +37,14 @@ public class GameManager : nattoList
     // Start is called before the first frame update
     void Start()
     {
-
+        //最初に客を出現
+        GenerateCostumer();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GenerateCostumer();
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            score+=customer.GetComponent<CustomerManager>().NattoChecker(selectnatto,selecttopping,selectmaze);
-            DeleteCustomer();
-        }
+
     }
 
    //ボタンによって選ばれた納豆を格納する関数
@@ -99,20 +96,48 @@ public class GameManager : nattoList
     }
 
     //画面遷移を行うボタン(納豆の選択→かき混ぜ→トッピング)
-    //(1:納豆の選択,2:かき混ぜ,3:トッピングの選択)
+    //(0:納豆の選択,1:かき混ぜ,2:トッピングの選択)
     public void SceneChangeButton(int flag)
     {
         switch (flag)
         {
+            case 0:
+                //納豆をかき混ぜる画面の表示
+                scenePanel[0].SetActive(false);
+                scenePanel[1].SetActive(true);
+                break;
             case 1:
+                //トッピングを選択する画面の表示
+                scenePanel[1].SetActive(false);
+                scenePanel[2].SetActive(true);
                 break;
             case 2:
-                break;
-            case 3:
+                //次の客を生成するまでの処理を行う
+                EndProcess();
                 break;
         }
     }
 
+    private void EndProcess()
+    {
+        //「求めている納豆を提供できたか？」でスコアを加算する
+        score += customer.GetComponent<CustomerManager>().NattoChecker(selectnatto, selecttopping, selectmaze);
+
+        //客を削除
+        DeleteCustomer();
+
+        //選択していた納豆、トッピング、混ぜ度合いの情報を初期化
+        selectnatto = Natto.None;
+        selecttopping = Topping.None;
+        selectmaze = Maze.None;
+
+        //次の客を生成する
+        GenerateCostumer();
+
+        //納豆を選択する画面の表示
+        scenePanel[2].SetActive(false);
+        scenePanel[0].SetActive(true);
+    }
     //使い終わった客を破棄する関数
     private void DeleteCustomer()
     {
