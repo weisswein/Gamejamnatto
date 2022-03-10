@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /*
@@ -23,6 +24,8 @@ public class CustomerManager : nattoList
     private int point = 0;
 
     private GameManager gamemanager;
+
+    public Text ordertext;
 
     // Start is called before the first frame update
     void Start()
@@ -91,5 +94,39 @@ public class CustomerManager : nattoList
         gamemanager = game;
     }
 
+    //求めている納豆の種類やトッピングから注文のテキストを生成する関数
+    public void GenerateText(Natto natto, Topping topping, Maze maze)
+    {
+        string spell ="";
+
+        //トッピングによるテキストの生成
+        foreach (Topping top in Nattotext.Keys)
+        {
+            if (top == topping)
+            {
+                spell += Toppingtext[top];
+            }
+        }
+
+        //混ぜ度合いによるテキストの生成
+        foreach (Maze ma in Mazetext.Keys)
+        {
+            if (ma == maze)
+            {
+                spell += Mazetext[ma];
+            }
+        }
+
+        //納豆の種類によるテキスト
+        foreach (Natto nat in Nattotext.Keys)
+        {
+            if (nat == natto)
+            {
+                spell += Nattotext[nat];
+            }
+        }
+
+        ordertext.text = spell+"納豆";
+    }
 
 }

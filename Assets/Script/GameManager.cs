@@ -16,6 +16,8 @@ public class GameManager : nattoList
     //ポイントを溜めていく変数
     [SerializeField] private int score = 0;
 
+    //現状の画面がどの画面なのかを判断する変数
+
     private GameManager gamemanager;
     public GameObject canvas;
 
@@ -23,9 +25,6 @@ public class GameManager : nattoList
     private GameObject customer=null;
     //生成するお客さんの情報を格納する変数
     public List<GameObject> customerPrefab;
-
-
-
     private void Awake()
     {
         gamemanager = GetComponent<GameManager>();
@@ -94,8 +93,24 @@ public class GameManager : nattoList
 
             //お客にトッピングや納豆の情報を渡す
             customer.GetComponent<CustomerManager>().SetStatus((Natto)randomnatto, (Topping)randomtopping, (Maze)randomnmaze);
+            customer.GetComponent<CustomerManager>().GenerateText((Natto)randomnatto, (Topping)randomtopping, (Maze)randomnmaze);
         }
 
+    }
+
+    //画面遷移を行うボタン(納豆の選択→かき混ぜ→トッピング)
+    //(1:納豆の選択,2:かき混ぜ,3:トッピングの選択)
+    public void SceneChangeButton(int flag)
+    {
+        switch (flag)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
     }
 
     //使い終わった客を破棄する関数
@@ -104,10 +119,5 @@ public class GameManager : nattoList
         Destroy(customer);
         customer = null;
     }
-
-    
-
-
-
 
 }
