@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2296266904144249912}
   - component: {fileID: 2296266904144249919}
   m_Layer: 0
-  m_Name: natto
+  m_Name: natto_Kotubu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2296266904144249917}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -959.73, y: -539.08, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 88accc9173cfa95479ea956e878c01c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f62000469f36494e8510bea09d1a8e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Sprite:
-  - {fileID: 21300000, guid: 88accc9173cfa95479ea956e878c01c3, type: 3}
-  - {fileID: 21300000, guid: d75a9f519e205b44f97208a654a5890d, type: 3}
-  - {fileID: 21300000, guid: d86f022c718bab94396318853ef1749c, type: 3}
+  - {fileID: 21300000, guid: 8f62000469f36494e8510bea09d1a8e8, type: 3}
+  - {fileID: 21300000, guid: 7a07d1286e609ff4b994298ccf73b7d7, type: 3}
+  - {fileID: 21300000, guid: fad1f681f3a4fc84080bc40c18a7f901, type: 3}
   Countingnt: {fileID: 0}
+  gamemanager: {fileID: 0}

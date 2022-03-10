@@ -75,6 +75,15 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
        
     }
 
+    //納豆を混ぜるシーンの終了後に呼ばれる関数
+    public void EndMazeScene()
+    {
+        //カーソルを見えるように
+        Cursor.visible = true;
+
+        //混ぜた回数を0に初期化
+        Cou = 0;
+    }
    
     private void Update()
     {
