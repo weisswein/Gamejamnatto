@@ -10,7 +10,7 @@ public class SpriteChange : MonoBehaviour
     int Countnb = 0;
   
     // Image コンポーネントを格納する変数
-    private Image m_Image;
+    private SpriteRenderer m_Image;
     // スプライトオブジェクトを格納する配列
     public Sprite[] m_Sprite;
     public UseRotateAround Countingnt;
@@ -21,8 +21,8 @@ public class SpriteChange : MonoBehaviour
     {
       
      
-        // Image コンポーネントを取得して変数 m_Image に格納
-        m_Image = GetComponent<Image>();
+        // Sprite Renderコンポーネントを取得して変数 m_Image に格納
+        m_Image = GetComponent<SpriteRenderer>();
     }
     
 
@@ -38,7 +38,7 @@ public class SpriteChange : MonoBehaviour
         }
            else if ((10 <= Countnb) && (Countnb < 30))//10回以上30回未満混ぜたときは、納豆のイラストがちょいネバになる
             { 
-              Debug.Log(Countingnt.Cou);
+             
                m_Image.sprite = m_Sprite[1];
             }
        
