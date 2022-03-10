@@ -27,7 +27,7 @@ public class Timemater : MonoBehaviour
         timeSlider.value = seconds;//Sliderのvalueの値に、経過時間を代入
         if(timeSlider.value == 60f)
         {
-            SceneManager.LoadScene("GameOverScene");//制限時間がすぎたらGameOverのSceneに移動
+            //SceneManager.LoadScene("GameOverScene");//制限時間がすぎたらGameOverのSceneに移動
         }
         
     }
