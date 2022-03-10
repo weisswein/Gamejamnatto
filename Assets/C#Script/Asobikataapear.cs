@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayMethod : MonoBehaviour
+public class Asobikataapear : MonoBehaviour
 {
-    [SerializeField] GameObject Asobikata;
-    public void PlayMethodButton()
+    [SerializeField] GameObject Asb;
+   public void AsobikataOpen()
     {
-        Asobikata.SetActive(true);
+        Asb.SetActive(true);
     }
-    public void ExitButton()
+   public void AsobikataClose()
     {
-        Asobikata.SetActive(false);
+        Asb.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
