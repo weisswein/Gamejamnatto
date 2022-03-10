@@ -11,13 +11,20 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.SceneManagement;
-/// <summary>
-/// Transform.RotateAroundを用いた円運動
-/// </summary>
+
 public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプログラム
 {
-    int count = 0;
+   
+     public int Cou = 0;
     float total = 0;
+
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+
     /*  Vector3 mazeru(Vector3 a, Vector3 b) 
       { // 混ぜるときの位置制限→円の式　a^2 + b^2 = 25
          c = Math.Pow(a,2);
@@ -40,6 +47,7 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
 
    void OnMouseDrag()
     {
+       
         //Spriteの位置をワールド座標からスクリーン座標に変換して、objectPointに格納
         Vector3 objectPoint
             = Camera.main.WorldToScreenPoint(transform.position);
@@ -71,19 +79,22 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
        
          if (total >= 500)
           {
-             count += 1;    //混ぜる回数をカウント
-              Debug.Log(count);
+             Cou += 1;    //混ぜる回数をカウント
+             
             total = 0;//合計の値を0に戻す
           }
 
+
+      
+
         //画面外に混ぜる箸が行ってしまったら、ゲームオーバー
-        if (Distance.magnitude >= 20) ;    
+       // if (Distance.magnitude >= 10) SceneManager.LoadScene("GameOverScene") ; 
     }
-        
+
     private void Update()
     {
 
-
+      
         // 中心点centerの周りを、軸axisで、period周期で円運動
       /*  transform.RotateAround(
             _center,
