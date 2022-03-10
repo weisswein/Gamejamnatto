@@ -25,7 +25,7 @@ public class Timemater : MonoBehaviour
     {
         seconds += Time.deltaTime;//経過時間代入
         timeSlider.value = seconds;//Sliderのvalueの値に、経過時間を代入
-        if(timeSlider.value == 30f)
+        if(timeSlider.value == 60f)
         {
             SceneManager.LoadScene("ScoreResult");
         }

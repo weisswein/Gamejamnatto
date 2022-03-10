@@ -70,7 +70,9 @@ public class CustomerManager : nattoList
         //求めている混ぜ度合か？
         if (maze == likemaze)
         {
-            point += 100;
+            //混ぜた量によってポイントの加算量を増やす
+            //混ぜ無し100点　ちょい混ぜ400点　よく混ぜ900点
+            point += (int)(100*(Mathf.Pow((int)maze,2)));
         }
         else
         {

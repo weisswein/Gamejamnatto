@@ -27,9 +27,15 @@ public class GameManager : nattoList
     private GameObject nattobowl;
 
     private GameManager gamemanager;
+
+    //生成したオブジェクトの親子関係を設定するのに必要
     public GameObject canvas;
     public GameObject MazeScene;
+
+    //かき混ぜるための箸の情報
     public UseRotateAround chopstick;
+    //スコアテキストの情報
+    public ScoreText scoremanager;
 
     //生成されたお客のオブジェクトを格納する変数
     private GameObject customer=null;
@@ -161,6 +167,9 @@ public class GameManager : nattoList
     {
         //「求めている納豆を提供できたか？」でスコアを加算する
         score += customer.GetComponent<CustomerManager>().NattoChecker(selectnatto, selecttopping, selectmaze);
+
+        //スコアテキストに反映
+        scoremanager.AddScore(score);
 
         //客を削除
         DeleteCustomer();

@@ -8,11 +8,8 @@ public class ScoreText : MonoBehaviour
     [SerializeField] Text textScore;　//Scoreを表示したいTextをここに持ってくる
     
     void Start()
-    {
-        AddScore();
+    { 
          this.textScore.text =   scorecounter.ToString()+"点";//スコア：○点と表示してくれる
-      
-       
     }
 
     // Update is called once per frame
@@ -21,9 +18,9 @@ public class ScoreText : MonoBehaviour
         
         
     }
-    public void AddScore()//呼び出したらScoreを加算して、Textに表示してくれる
+    public void AddScore(int score)//呼び出したらScoreを、Textに表示してくれる
     {
-        scorecounter += 10;
-        this.textScore.text =  scorecounter.ToString()+ "点";
+        scorecounter = score;
+        this.textScore.text =  score.ToString()+ "点";
     }
 }
