@@ -7,12 +7,12 @@ public class nattoList : MonoBehaviour
     //納豆の種類やトッピングの種類を格納するスクリプト
 
     //納豆の種類
-    public enum Natto { Kotubu, Ootubu, Hikiwari };
+    public enum Natto { None,Kotubu, Ootubu, Hikiwari };
 
     //トッピングの種類
-    public enum Topping { Negi, Nori, Cheese };
+    public enum Topping { None,Negi, Nori, Cheese };
 
     //混ぜられた度合い
-    public enum Maze { Mazenasi,Tyoimaze,Yokumaze};
+    public enum Maze { None,Mazenasi,Tyoimaze,Yokumaze};
 
 }
