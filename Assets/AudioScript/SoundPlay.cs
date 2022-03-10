@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//このスクリプトは、効果音を動かします。
 public class SoundPlay : MonoBehaviour
 {
+    // 音を調整するコンポーネントを取得
     [SerializeField] AudioSource source1;
     [SerializeField] AudioSource source2;
-    [SerializeField] AudioSource source3;
+    
+    //音源素材を取得
     [SerializeField] AudioClip clip1;
     [SerializeField] AudioClip clip2;
-    [SerializeField] AudioClip clip3;
+  
     public UseRotateAround Countobj;
     void Update()
     {
-     if(Countobj.Cou == 10)
+     if(Countobj.Cou == 10)//10回混ぜたときに、効果音
         {
-            source1.PlayOneShot(clip2);
+            source1.PlayOneShot(clip1);
         }
-     else if(Countobj.Cou == 30)
+     else if(Countobj.Cou == 30)//30回混ぜたときに、効果音
         {
-            source2.PlayOneShot(clip3);
+            source2.PlayOneShot(clip2);
         }
-     else if(Countobj.Cou == 1)
-        {
-            source3.PlayOneShot(clip1);
-        }
+   
     }
 }

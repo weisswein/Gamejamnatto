@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class StartButtonController : MonoBehaviour
+using UnityEngine.UI;
+
+public class PlayMethod : MonoBehaviour
 {
-    public void StartButton()
-    {//Game開始ボタン
-       SceneManager.LoadScene("GameScene");
+    [SerializeField] GameObject Asobikata;
+    public void PlayMethodButton()
+    {
+        Asobikata.SetActive(true);
+    }
+    public void ExitButton()
+    {
+        Asobikata.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
