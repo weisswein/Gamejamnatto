@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameOverButton : MonoBehaviour
 {
     public void REStart()
-    {
+    {//最初のSceneに戻るボタン
         SceneManager.LoadScene("SampleScene");
     }
     // Start is called before the first frame update

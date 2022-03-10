@@ -13,11 +13,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプログラム
-{/*
-    public GameObject Bigbeans;
-    public GameObject Smallbeans;
-    public GameObject Hikiwari;
-   */
+{
    
      public int Cou = 0;
     float total = 0;
@@ -25,7 +21,7 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
 
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
 
@@ -92,7 +88,7 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
       
 
         //画面外に混ぜる箸が行ってしまったら、ゲームオーバー
-        if (Distance.magnitude >= 10) SceneManager.LoadScene("GameOverScene") ; 
+       // if (Distance.magnitude >= 10) SceneManager.LoadScene("GameOverScene") ; 
     }
 
     private void Update()

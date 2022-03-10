@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameOvertext : MonoBehaviour
 {
+    [SerializeField] GameObject OverButton;
     RectTransform rect; //Canvasからの位置変数
 
     // Start is called before the first frame update
@@ -16,9 +17,10 @@ public class GameOvertext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rect.localPosition.magnitude);
+        //Debug.Log(rect.localPosition.magnitude);
         if(rect.localPosition.magnitude <= 526 ){
-           // 真ん中あたりに来たら止まる
+            // 真ん中あたりに来たら止まって、Buttonを表示
+            OverButton.SetActive(true);
         }
         else { rect.localPosition += new Vector3(0, -3, 0); }//Textが１F毎にy座標－3で落ちてくる
        
