@@ -20,10 +20,16 @@ public class GameManager : nattoList
     //(0:納豆選択画面,1:納豆かき混ぜ画面,2:トッピング選択画面)
     public GameObject[] scenePanel;
 
-    //現状の画面がどの画面なのかを判断する変数
+    //納豆のボウルを格納する配列
+    public GameObject[] nattoBowlList;
+
+    //表示される納豆のボウルの変数
+    private GameObject nattobowl;
 
     private GameManager gamemanager;
     public GameObject canvas;
+    public GameObject MazeScene;
+    public UseRotateAround chopstick;
 
     //生成されたお客のオブジェクトを格納する変数
     private GameObject customer=null;
@@ -65,7 +71,6 @@ public class GameManager : nattoList
     public void ChooseMaze(Maze maze)
     {
         selectmaze = maze;
-        Debug.Log(selectmaze);
     }
 
     //お客を生成する関数
@@ -102,11 +107,21 @@ public class GameManager : nattoList
         switch (flag)
         {
             case 0:
+
+                //納豆をかき混ぜるボウルの生成
+                GenerateNattoBowl();
+
                 //納豆をかき混ぜる画面の表示
                 scenePanel[0].SetActive(false);
                 scenePanel[1].SetActive(true);
                 break;
             case 1:
+
+                //納豆をかき混ぜた後の終了処理を呼ぶ
+                chopstick.EndMazeScene();
+                //納豆ボウルを破棄
+                Destroy(nattobowl);
+
                 //トッピングを選択する画面の表示
                 scenePanel[1].SetActive(false);
                 scenePanel[2].SetActive(true);
@@ -116,6 +131,30 @@ public class GameManager : nattoList
                 EndProcess();
                 break;
         }
+    }
+
+    //納豆の種類によって納豆をかき混ぜるボウルを生成する
+    public void GenerateNattoBowl()
+    {
+        switch (selectnatto)
+        {
+            case Natto.Kotubu:
+                nattobowl = Instantiate(nattoBowlList[0]);
+                break;
+            case Natto.Ootubu:
+                nattobowl = Instantiate(nattoBowlList[1]);
+                break;
+            case Natto.Hikiwari:
+                nattobowl = Instantiate(nattoBowlList[2]);
+                break;
+
+        }
+
+        //nattobowl.transform.position = new Vector3(-960.0f, -540.0f, 0f);
+        nattobowl.transform.SetParent(MazeScene.transform);
+        nattobowl.GetComponent<SpriteChange>().Countingnt = chopstick;
+        nattobowl.GetComponent<SpriteChange>().gamemanager = this.gamemanager;
+
     }
 
     private void EndProcess()
