@@ -412,6 +412,10 @@ MonoBehaviour:
   scoremanager: {fileID: 429642382}
   customerPrefab:
   - {fileID: 190036391528720122, guid: b25a9ec0379de134990b873cafe7987a, type: 3}
+  - {fileID: 190036391528720122, guid: 2a8f2bd2ffd7f5c4195910da1e02a450, type: 3}
+  - {fileID: 190036391528720122, guid: f59b77e524ded8c41a05455091f32fad, type: 3}
+  - {fileID: 190036391528720122, guid: a5ca820cf2b815c4db299304cd3ba4dc, type: 3}
+  - {fileID: 190036391528720122, guid: c8c9d425752cdaa4192d05eb7fef9091, type: 3}
 --- !u!1 &173483752
 GameObject:
   m_ObjectHideFlags: 0

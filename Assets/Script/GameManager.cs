@@ -84,8 +84,11 @@ public class GameManager : nattoList
     {
         if (customer == null)
         {
+            //ランダムに客を生成
+            int index = Random.Range(0, customerPrefab.Count);
+
             //客のオブジェクトを生成
-            customer = Instantiate(customerPrefab[0]);
+            customer = Instantiate(customerPrefab[index]);
 
             //オブジェクトをcanvas内に移動(これをしないと画像が表示されない)
             customer.transform.SetParent(canvas.transform, false);
