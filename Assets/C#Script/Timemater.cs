@@ -27,7 +27,8 @@ public class Timemater : MonoBehaviour
         timeSlider.value = seconds;//Sliderのvalueの値に、経過時間を代入
         if(timeSlider.value == 60f)
         {
-            SceneManager.LoadScene("ScoreResult");
+            FadeManager.Instance.LoadScene("ScoreResult", 2.0f);
+            
         }
         
     }
