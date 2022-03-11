@@ -133,6 +133,9 @@ public class GameManager : nattoList
                 scenePanel[2].SetActive(true);
                 break;
             case 2:
+
+                //出来た納豆ご飯の絵を入れる
+
                 //次の客を生成するまでの処理を行う
                 EndProcess();
                 break;
