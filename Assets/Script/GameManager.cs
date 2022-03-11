@@ -92,6 +92,7 @@ public class GameManager : nattoList
 
             //オブジェクトをcanvas内に移動(これをしないと画像が表示されない)
             customer.transform.SetParent(canvas.transform, false);
+            customer.transform.SetAsFirstSibling();
 
             //お客にゲームマネージャーの情報を渡す
             customer.GetComponent<CustomerManager>().SetGameManager(gamemanager);
