@@ -6,7 +6,8 @@ public class StartButtonController : MonoBehaviour
 {
     public void StartButton()
     {//Game開始ボタン
-       SceneManager.LoadScene("GameScene");
+        FadeManager.Instance.LoadScene("GameScene", 2.0f);
+       // SceneManager.LoadScene("GameScene");
     }
     // Start is called before the first frame update
     void Start()

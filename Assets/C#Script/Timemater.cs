@@ -8,7 +8,7 @@ public class Timemater : MonoBehaviour
   
     [SerializeField]
     private float seconds;//経過時間を格納する変数
-
+    bool Scenebool = true;
     public Slider timeSlider;　//スライターのコンポーネントを入手する変数
 
     
@@ -25,10 +25,13 @@ public class Timemater : MonoBehaviour
     {
         seconds += Time.deltaTime;//経過時間代入
         timeSlider.value = seconds;//Sliderのvalueの値に、経過時間を代入
-        if(timeSlider.value == 60f)
+        if (Scenebool)
         {
-            SceneManager.LoadScene("ScoreResult");
+            if (timeSlider.value == 60f)
+            {
+                FadeManager.Instance.LoadScene("ScoreResult", 2.0f);
+                Scenebool = false;
+            }
         }
-        
     }
 }
