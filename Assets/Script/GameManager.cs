@@ -100,7 +100,7 @@ public class GameManager : nattoList
 
             //ランダムにトッピングや納豆を決定
             int randomnatto = Random.Range(1, 4);
-            int randomtopping = Random.Range(1, 4);//種類を増やしたら数を変更する
+            int randomtopping = Random.Range(1, 7);//種類を増やしたら数を変更する
             int randomnmaze = Random.Range(1, 4);
 
             //お客にトッピングや納豆の情報を渡す
@@ -131,6 +131,8 @@ public class GameManager : nattoList
                 chopstick.EndMazeScene();
                 //納豆ボウルを破棄
                 Destroy(nattobowl);
+                //箸を非表示に
+                chopstick.gameObject.SetActive(false);
 
                 //トッピングを選択する画面の表示
                 scenePanel[1].SetActive(false);
@@ -163,6 +165,7 @@ public class GameManager : nattoList
 
         }
 
+        chopstick.gameObject.SetActive(true);
         //nattobowl.transform.position = new Vector3(-960.0f, -540.0f, 0f);
         nattobowl.transform.SetParent(MazeScene.transform);
         nattobowl.GetComponent<SpriteChange>().Countingnt = chopstick;

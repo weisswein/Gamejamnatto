@@ -10,7 +10,7 @@ public class nattoList : MonoBehaviour
     public enum Natto { None,Kotubu, Ootubu, Hikiwari };
 
     //トッピングの種類
-    public enum Topping { None,Negi, Nori, Cheese };
+    public enum Topping { None,Negi, Nori, Cheese,Tougarasi,Tamago,Sirasu };
 
     //混ぜられた度合い
     public enum Maze { None,Mazenasi,Tyoimaze,Yokumaze};
@@ -28,7 +28,10 @@ public class nattoList : MonoBehaviour
     {
         { Topping.Negi,"ねぎ"},
         { Topping.Nori,"のり"},
-        { Topping.Cheese,"チーズ"}
+        { Topping.Cheese,"チーズ"},
+        { Topping.Tamago,"卵かけ"},
+        { Topping.Sirasu,"しらす"},
+        { Topping.Tougarasi,"赤い"}
     };
 
     //トッピングとテキストの組み合わせ

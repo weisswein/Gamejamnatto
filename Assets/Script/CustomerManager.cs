@@ -89,7 +89,7 @@ public class CustomerManager : nattoList
         string spell ="";
 
         //トッピングによるテキストの生成
-        foreach (Topping top in Nattotext.Keys)
+        foreach (Topping top in Toppingtext.Keys)
         {
             if (top == topping)
             {

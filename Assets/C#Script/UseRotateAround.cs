@@ -64,7 +64,7 @@ public class UseRotateAround : MonoBehaviour //納豆を混ぜるときのプロ
         
             total += length;
        
-         if (total >= 50)
+         if (total >= 40)
           {
              Cou += 1;    //混ぜる回数をカウント
             Debug.Log(Cou);
