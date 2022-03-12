@@ -21,6 +21,12 @@ public class ScoreText : MonoBehaviour
     public void AddScore(int score)//呼び出したらScoreを、Textに表示してくれる
     {
         scorecounter = score;
-        this.textScore.text =  score.ToString()+ "点";
+        this.textScore.text =  scorecounter.ToString()+ "点";
+    }
+
+    public void ResetScore()
+    {
+        scorecounter = 0;
+        this.textScore.text = scorecounter.ToString() + "点";
     }
 }

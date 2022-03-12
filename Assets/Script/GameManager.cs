@@ -34,8 +34,10 @@ public class GameManager : nattoList
 
     //かき混ぜるための箸の情報
     public UseRotateAround chopstick;
+
     //スコアテキストの情報
     public ScoreText scoremanager;
+    public NattoGohanChanger nattoGohan;
 
     //生成されたお客のオブジェクトを格納する変数
     private GameObject customer=null;
@@ -49,6 +51,8 @@ public class GameManager : nattoList
     // Start is called before the first frame update
     void Start()
     {
+        //スコアのリセット
+        scoremanager.ResetScore();
         //最初に客を出現
         GenerateCostumer();
     }
@@ -63,14 +67,13 @@ public class GameManager : nattoList
     public void ChooseNatto(Natto natto)
     {
         selectnatto = natto;
-        Debug.Log(selectnatto);
     }
 
     //ボタンによって選ばれたトッピングを格納する関数
     public void ChooseTopping(Topping topping)
     {
         selecttopping = topping;
-   
+        nattoGohan.NattoGohanChange((int)selecttopping);
     }
 
     //かき混ぜた回数によって変わる混ぜ度合いを格納する関数
@@ -118,12 +121,15 @@ public class GameManager : nattoList
         {
             case 0:
 
-                //納豆をかき混ぜるボウルの生成
-                GenerateNattoBowl();
+                if (selectnatto != Natto.None)
+                {
+                    //納豆をかき混ぜるボウルの生成
+                    GenerateNattoBowl();
 
-                //納豆をかき混ぜる画面の表示
-                scenePanel[0].SetActive(false);
-                scenePanel[1].SetActive(true);
+                    //納豆をかき混ぜる画面の表示
+                    scenePanel[0].SetActive(false);
+                    scenePanel[1].SetActive(true);
+                }
                 break;
             case 1:
 
@@ -140,7 +146,8 @@ public class GameManager : nattoList
                 break;
             case 2:
 
-                //出来た納豆ご飯の絵を入れる
+                //出来た納豆ご飯の絵の初期化
+                nattoGohan.NattoGohanChange(0);
 
                 //次の客を生成するまでの処理を行う
                 EndProcess();

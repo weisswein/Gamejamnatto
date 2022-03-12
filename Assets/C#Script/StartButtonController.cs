@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class StartButtonController : MonoBehaviour
 {
     public void StartButton()
-    {//Game開始ボタン
+    {
+        //Game開始ボタン
         FadeManager.Instance.LoadScene("GameScene", 2.0f);
        // SceneManager.LoadScene("GameScene");
     }

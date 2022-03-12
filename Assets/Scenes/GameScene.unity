@@ -587,6 +587,7 @@ MonoBehaviour:
   MazeScene: {fileID: 608530623}
   chopstick: {fileID: 1945783568}
   scoremanager: {fileID: 429642382}
+  nattoGohan: {fileID: 617863041}
   customerPrefab:
   - {fileID: 190036391528720122, guid: b25a9ec0379de134990b873cafe7987a, type: 3}
   - {fileID: 190036391528720122, guid: 2a8f2bd2ffd7f5c4195910da1e02a450, type: 3}
@@ -1398,6 +1399,7 @@ GameObject:
   - component: {fileID: 617863038}
   - component: {fileID: 617863040}
   - component: {fileID: 617863039}
+  - component: {fileID: 617863041}
   m_Layer: 5
   m_Name: NattoGoHan
   m_TagString: Untagged
@@ -1443,7 +1445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a72c450c0c8f724ab5f1a8d6fce9b3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d312392c1598ee045a2435c5d33817fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1461,6 +1463,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617863037}
   m_CullTransparentMesh: 0
+--- !u!114 &617863041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617863037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57962b49a3b629b4e852fff79f82d3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToppingGohan:
+  - {fileID: 21300000, guid: d312392c1598ee045a2435c5d33817fb, type: 3}
+  - {fileID: 21300000, guid: 852c1cfe59211d246a4a67230e665767, type: 3}
+  - {fileID: 21300000, guid: e9634bf4bbed46e48a41ff9b9be2cd8c, type: 3}
+  - {fileID: 21300000, guid: 9450350c22859c344b5941ee60a35808, type: 3}
+  - {fileID: 21300000, guid: ae4d63238e1e02b4ea4775a5973f09cd, type: 3}
+  - {fileID: 21300000, guid: cfc8ce92b6f6de64da27fc61a39da3ad, type: 3}
+  - {fileID: 21300000, guid: fcd43184a2001b54388a84d25aec5af9, type: 3}
 --- !u!1 &720472256
 GameObject:
   m_ObjectHideFlags: 0
